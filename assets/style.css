@@ -1,3 +1,5 @@
+/*styling based on format from taskinator project*/
+
 * {
     box-sizing: border-box;
 }
@@ -19,13 +21,17 @@ body {
 header {
     background: var(--primary);
     padding: 20px 15px;
-    border-bottom: 7px solid var(--secondary);
     color:azure;
+}
+
+header h1 {
+    justify-content: center;
 }
 
 header p {
     color:antiquewhite;
     margin: 5px 0 20px;
+    justify-content: center;
 }
 
 /*styling for the list items*/
