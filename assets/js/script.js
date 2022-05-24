@@ -1,4 +1,4 @@
-var timerEl = document.getElementById('timer');
+var timerEl = document.getElementById('countdown');
 
 var myQuestions = [
     {
@@ -25,6 +25,8 @@ var myQuestions = [
 function countdown() {
     var timeLeft = 30;
 
+    //based on time in class activity **IT WORKS!!!!
+    //HOW TO DEDUCT TIME BASED ON WRONG ANSWERS!!!
     var timeInterval = setInterval (function() {
         if(timeLeft > 1) {
             timerEl.textContent = timeLeft + ' seconds remaining ';
