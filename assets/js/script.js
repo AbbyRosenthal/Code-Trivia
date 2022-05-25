@@ -1,50 +1,51 @@
 var timerEl = document.getElementById('countdown');
+let questionsEl = document.getElementById('questionLocation')
 
 var myQuestions = [
     {
-        question: "Which would change the styling of a webpage?",
-        answers: {
+        questionOne: "Which would change the styling of a webpage?",
+        answerOne: {
             a: "css",
             b: "html",
             c: "javascript",
         },
-        correctAnswer: 'b'
+        correctAnswerOne: 'b'
     },
     {
-        question: "INSERT QUESTION",
-        answers: {
+        questionTwo: "INSERT QUESTION",
+        answersTwo: {
             a: "OPTION",
             b: "OPTION",
             c: "OPTION",
         },
-        correctAnswer: 'c'
+        correctAnswerTwo: 'c'
     },
     {
-        question: "INSERT QUESTION",
-        answers: {
+        questionThree: "INSERT QUESTION",
+        answersThree: {
             a: "OPTION",
             b: "OPTION",
             c: "OPTION",
         },
-        correctAnswer: 'c'
+        correctAnswerThree: 'c'
     }, 
     {
-        question: "INSERT QUESTION",
-        answers: {
+        questionFour: "INSERT QUESTION",
+        answersFour: {
             a: "OPTION",
             b: "OPTION",
             c: "OPTION",
         },
-        correctAnswer: 'c'
+        correctAnswerFour: 'c'
     },
     {
-        question: "INSERT QUESTION",
-        answers: {
+        questionFive: "INSERT QUESTION",
+        answersFive: {
             a: "OPTION",
             b: "OPTION",
             c: "OPTION",
         },
-        correctAnswer: 'c'
+        correctAnswerFive: 'c'
     },
 ]
 
@@ -70,3 +71,10 @@ function countdown() {
     }, 1000);
 }
 countdown();
+
+//FUNCTION TO START GAME
+
+//FUNTION TO SELECT QUESTIONS USING .MAP
+
+//FUNCTION TO END GAME
+
