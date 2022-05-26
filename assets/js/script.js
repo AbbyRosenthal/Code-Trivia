@@ -1,51 +1,57 @@
 var timerEl = document.getElementById('countdown');
 let questionsEl = document.getElementById('questionLocation')
 
-var myQuestions = [
+//variables to manipulate numbers on page
+var clock = 60;
+var score = 0;
+var penalty = 3;
+
+
+var myQuestionsArray = [
     {
-        questionOne: "Which would change the styling of a webpage?",
-        answerOne: {
+        question: "Which would change the styling of a webpage?",
+        answer: {
             a: "css",
             b: "html",
             c: "javascript",
         },
-        correctAnswerOne: 'b'
+        correctAnswer: 'b'
     },
     {
-        questionTwo: "INSERT QUESTION",
-        answersTwo: {
+        question: "INSERT QUESTION",
+        answers: {
             a: "OPTION",
             b: "OPTION",
             c: "OPTION",
         },
-        correctAnswerTwo: 'c'
+        correctAnswer: 'c'
     },
     {
-        questionThree: "INSERT QUESTION",
-        answersThree: {
+        question: "INSERT QUESTION",
+        answers: {
             a: "OPTION",
             b: "OPTION",
             c: "OPTION",
         },
-        correctAnswerThree: 'c'
+        correctAnswer: 'c'
     }, 
     {
-        questionFour: "INSERT QUESTION",
-        answersFour: {
+        question: "INSERT QUESTION",
+        answers: {
             a: "OPTION",
             b: "OPTION",
             c: "OPTION",
         },
-        correctAnswerFour: 'c'
+        correctAnswer: 'c'
     },
     {
-        questionFive: "INSERT QUESTION",
-        answersFive: {
+        question: "INSERT QUESTION",
+        answers: {
             a: "OPTION",
             b: "OPTION",
             c: "OPTION",
         },
-        correctAnswerFive: 'c'
+        correctAnswer: 'c'
     },
 ]
 
@@ -74,7 +80,15 @@ countdown();
 
 //FUNCTION TO START GAME
 
+function beginQuiz() {
+var userInitials = prompt("Welcome to Code Triva!  Please enter your initials to begin!")
+    console.log(userInitials);
+}
+ beginQuiz ();
+
+
 //FUNTION TO SELECT QUESTIONS USING .MAP
+function selectAnswer () {}
 
 //FUNCTION TO END GAME
 
