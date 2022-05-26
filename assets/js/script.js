@@ -1,57 +1,38 @@
 var timerEl = document.getElementById('countdown');
-let questionsEl = document.getElementById('questionLocation')
+let questionsEl = document.getElementById('questionList')
+let answersEl = document.getElementById('answerList')
 
 //variables to manipulate numbers on page
 var clock = 60;
 var score = 0;
 var penalty = 3;
 
-
-var myQuestionsArray = [
+//questions array for quiz questions
+var questionsArray = [
     {
         question: "Which would change the styling of a webpage?",
-        answer: {
-            a: "css",
-            b: "html",
-            c: "javascript",
-        },
-        correctAnswer: 'b'
+        answer:["css, javascript, html, good luck"],
+        correctAnswer: 0,
     },
     {
         question: "INSERT QUESTION",
-        answers: {
-            a: "OPTION",
-            b: "OPTION",
-            c: "OPTION",
-        },
-        correctAnswer: 'c'
+        answers:["1, 2, 3, 4"],
+        correctAnswer: 2,
     },
     {
         question: "INSERT QUESTION",
-        answers: {
-            a: "OPTION",
-            b: "OPTION",
-            c: "OPTION",
-        },
-        correctAnswer: 'c'
-    }, 
-    {
-        question: "INSERT QUESTION",
-        answers: {
-            a: "OPTION",
-            b: "OPTION",
-            c: "OPTION",
-        },
-        correctAnswer: 'c'
+        answers:["1, 2, 3, 4"],
+        correctAnswer: 2,
     },
     {
         question: "INSERT QUESTION",
-        answers: {
-            a: "OPTION",
-            b: "OPTION",
-            c: "OPTION",
-        },
-        correctAnswer: 'c'
+        answers:["1, 2, 3, 4"],
+        correctAnswer: 2,
+    },
+    {
+        question: "INSERT QUESTION",
+        answers:["1, 2, 3, 4"],
+        correctAnswer: 2,
     },
 ]
 
@@ -88,7 +69,13 @@ var userInitials = prompt("Welcome to Code Triva!  Please enter your initials to
 
 
 //FUNTION TO SELECT QUESTIONS USING .MAP
-function selectAnswer () {}
+function selectAnswer() {
+    for (var i=0; i <questionsArray.length; i++) {
+        questionsEl = questionsArray.push
+    }
+
+}
+selectAnswer();
 
 //FUNCTION TO END GAME
 
