@@ -6,50 +6,31 @@ let startButtonEl = document.getElementById('start-btn');
 
 //questions array for quiz questions
 var questions = [
+    //make all questions like this
     {
         question: "Which would change the styling of a webpage?",
-        answer: {
-            a: "css",
-            b: "javascript",
-            c: "html",
-        },
-        correctAnswer: 'a'
+        answer: ["css", "javascript", "html"],
+        correctAnswer: 0
     },
     {
         question: "Which would change the styling of a webpage?",
-        answer: {
-            a: "css",
-            b: "javascript",
-            c: "html",
-        },
-        correctAnswer: 'a'
+        answer: ["css", "javascript", "html"],
+        correctAnswer: 0
     },
     {
         question: "Which would change the styling of a webpage?",
-        answer: {
-            a: "css",
-            b: "javascript",
-            c: "html",
-        },
-        correctAnswer: 'a'
+        answer: ["css", "javascript", "html"],
+        correctAnswer: 0
     },
     {
         question: "Which would change the styling of a webpage?",
-        answer: {
-            a: "css",
-            b: "javascript",
-            c: "html",
-        },
-        correctAnswer: 'a'
+        answer: ["css", "javascript", "html"],
+        correctAnswer: 0
     },
     {
         question: "Which would change the styling of a webpage?",
-        answer: {
-            a: "css",
-            b: "javascript",
-            c: "html",
-        },
-        correctAnswer: 'a'
+        answer: ["css", "javascript", "html"],
+        correctAnswer: 0
     },
 ]
 
@@ -93,7 +74,12 @@ function insertQuestions() {
     questionsEl.textContent = questions[1].question
     for (var i = 0; i < questions.length; i++) {
         var answerOptions = document.createElement("button")
-        answerOptions.textContent = questions.answer.a;
+        //this doesn't work
+        var showAnswers = questions.map(function(q){
+            return q.answer.values();
+        } )
+        console.log(questions[0].answer)
+    console.log(showAnswers)
         answerOptions.setAttribute("value", questions[i]);
         answersEl.appendChild(answerOptions);
         //append to select
