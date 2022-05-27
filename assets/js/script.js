@@ -75,10 +75,10 @@ function generateQuestions() {
     questionsEl.textContent = questions[1].question
     for (var i = 0; i < questions.length; i++) {
         //its not reading the array
-        var answerOptions = (questions.answer)
-        console.log(answerOptions)
+        var answerOptions = [questions.answer]
         var btn = document.createElement("button");
-        var a = document.createTextNode(questions.answer);
+        //WHY IS questions.answers RETURNING AS empty
+        var a = document.createTextNode(answerOptions);
         btn.appendChild(a);
         document.body.appendChild(btn);
     }
