@@ -7,38 +7,28 @@
 </head>
 
 <body>
-
     <!--high score and timer-->
-    <div class="header">
-          <h1 class="page-title">Code Breakers Trivia</h1>
+    <div>
+        <h1 class="page-title">Code Breakers Trivia</h1>
         <!--div container for timer-->
         <div class="highscore-timer">
             <h2 id="countdown"></h2>
         </div>
         <!--div container for high score-->
-        <div id="container">
+        <div>
             <span id="highScore"><a href="/highscore.html">High Score</a>
             </span>
         </div>
     </div>
-
     <!--start quiz buttton-->
-    <div class="start-btn"><button id ="start-btn">START</button></div>
-
-    <!--link to Javasript-->
-
-<!--questions and answers section-->
-    <main class="page-content" id="questionLocation">
-            <!--how I will target the questions in JS-->
-            <div>
-                <p id="questionList">Get Ready to Test Your Coding Knowledge!</p>
-            </div>
-            <div id="answersList">
-                <button class="btn">1</button>
-                <button class="btn">2</button>
-                <button class="btn">3</button>
-            </div>
-        </section>
+    <div class="start-btn"><button id="start-btn">START</button></div>
+    <!--questions and answers section-->
+        <div>
+            <p id="questionList">Get Ready to Test Your Coding Knowledge!</p>
+        </div>
+        <!--Answer Buttons-->
+        <div id="answersList">
+        </div>
     </main>
     <script src="assets/js/script.js"></script>
 </body>

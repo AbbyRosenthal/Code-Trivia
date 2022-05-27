@@ -2,6 +2,7 @@ var timerEl = document.getElementById('countdown');
 var questionsEl = document.querySelector('#questionList');
 let answersEl = document.getElementById('answerList');
 let startButtonEl = document.getElementById('start-btn');
+let answersButtonEl = document.getElementById('answer-btn');
 
 
 //questions array for quiz questions
@@ -64,29 +65,24 @@ function countdown() {
 function beginQuiz() {
     var userInitials = prompt("Welcome to Code Triva!  Please enter your initials to begin!")
     console.log(userInitials);
-    insertQuestions()
-
+    generateQuestions();
 };
+
 
 // beginQuiz();
 
-function insertQuestions() {
+function generateQuestions() {
     questionsEl.textContent = questions[1].question
     for (var i = 0; i < questions.length; i++) {
-        var answerOptions = document.createElement("button")
-        //this doesn't work
-        var showAnswers = questions.map(function(q){
-            return q.answer.values();
-        } )
-        console.log(questions[0].answer)
-    console.log(showAnswers)
-        answerOptions.setAttribute("value", questions[i]);
-        answersEl.appendChild(answerOptions);
-        //append to select
-
+        //its not reading the array
+        var answerOptions = (questions.answer)
+        console.log(answerOptions)
+        var btn = document.createElement("button");
+        var a = document.createTextNode(questions.answer);
+        btn.appendChild(a);
+        document.body.appendChild(btn);
     }
 }
 
-//FUNTION TO SELECT QUESTIONS USING .MAP
 
-//FUNCTION TO END GAME
+
