@@ -4,6 +4,8 @@ let answersEl = document.getElementById('answersList');
 let startButtonEl = document.getElementById('start-btn');
 let answersButtonEl = document.getElementById('answer-btn');
 let index = 0;
+var timeInterval;
+var timeLeft;
 
 //questions array for quiz questions
 var questions = [
@@ -39,22 +41,16 @@ var questions = [
 
 //TIMER - is janky and needs to be fixed since adding event listener
 function countdown() {
-    var timeLeft = 30;
-    //based on time in class activity 
+    timeLeft = 30;
     //HOW TO DEDUCT TIME BASED ON WRONG ANSWERS!!!
-    var timeInterval = setInterval(function () {
-        if (timeLeft > 1) {
-            timerEl.textContent = timeLeft + ' seconds remaining ';
-            timeLeft--;
-        }
-        else if (timeLeft === 1) {
+    timeInterval = setInterval(function () {
+        timeLeft --;
+        timerEl.textContent = timeLeft + ' seconds remaining ';
+        if (timeLeft <= 0) {
             timerEl.textContent = timeLeft + ' second remaining';
-            timeLeft--;
+            endQuiz()
         }
-        else {
-            timerEl.textContent = '';
-            clearInterval(timeInterval);
-        }
+
     }, 1000);
 }
 
@@ -74,6 +70,7 @@ function beginQuiz() {
 //THIS ADDS DYNAMIC BUTTONS
 
 function generateQuestions() {
+    answersEl.innerHTML = ""
     questionsEl.textContent = questions[index].question
     for (var i = 0; i < questions[index].answer.length;i++) {
         var choiceButton = document.createElement("button");
@@ -81,32 +78,38 @@ function generateQuestions() {
         console.log(value)
         choiceButton.setAttribute("value", value)
         choiceButton.textContent = value
-        choiceButton.onclick = answerQuestion
+        choiceButton.onclick = checkAnswers
         answersEl.appendChild(choiceButton)
-
-
-    //     var answerOptions = [questions[i].answer[i]]
-    // //     console.log(answerOptions)
-    //     var btn = document.createElement("button");
-    //     var a = document.createTextNode(answerOptions);
-    //     btn.appendChild(a);
-    //     document.body.appendChild(btn);
-    //     console.log(questions[0].answer)
     }
 }
  
 function checkAnswers() {
-
+    //when question is wrong .. ADD ALERT
+    if (this.value !== questions[index].correctAnswer) {
+        timeLeft -= 5;
+        if (timeLeft < 0) {
+            timeLeft = 0
+        }
+        timerEl.textContent = timeLeft + ' seconds remaining ';
+    }
+//GIVE FEEDBACK QUETISON WAS WRONG
+index ++ 
+if (index === questions[index].answer.length) {
+    endQuiz()
+}
+else {
+    generateQuestions();
+}
 }
 
-//runs this no matter what button is clicked
-function answerQuestion() {
-    console.log("yay abby")
+//BUILD END QUIZ FUNCTION
+function endQuiz() {
+    //clear interval here
+    //show score 
+    //clear out last questions and answers
 }
 
-
-
-
+//arrys have built in sort function... questions.sort 
 
 //LOCAL STORAGE
 // localStorage.setItem("score", JSON.stringify(sec));
