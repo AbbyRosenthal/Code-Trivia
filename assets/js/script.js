@@ -1,9 +1,9 @@
 var timerEl = document.getElementById('countdown');
 var questionsEl = document.querySelector('#questionList');
-let answersEl = document.getElementById('answerList');
+let answersEl = document.getElementById('answersList');
 let startButtonEl = document.getElementById('start-btn');
 let answersButtonEl = document.getElementById('answer-btn');
-
+let index = 0;
 
 //questions array for quiz questions
 var questions = [
@@ -11,34 +11,31 @@ var questions = [
     {
         question: "Which would change the styling of a webpage?",
         answer: ["css", "javascript", "html"],
-        correctAnswer: 0
+        correctAnswer: "css",
     },
     {
-        question: "Which would change the styling of a webpage?",
-        answer: ["css", "javascript", "html"],
-        correctAnswer: 0
+        question: "What is my favorite color",
+        answer: ["blue", "green", "who cares"],
+        correctAnswer: "green",
     },
     {
-        question: "Which would change the styling of a webpage?",
-        answer: ["css", "javascript", "html"],
-        correctAnswer: 0
+        question: "food",
+        answer: ["banana", "apple", "grape"],
+        correctAnswer: "apple",
     },
     {
-        question: "Which would change the styling of a webpage?",
-        answer: ["css", "javascript", "html"],
-        correctAnswer: 0
+        question: "shoes",
+        answer: ["tennis", "sandal", "heel"],
+        correctAnswer: "heel",
     },
     {
-        question: "Which would change the styling of a webpage?",
-        answer: ["css", "javascript", "html"],
-        correctAnswer: 0
+        question: "animals",
+        answer: ["dog", "bear", "goat"],
+        correctAnswer: "bear",
     },
 ]
 
-// event listeners for start button to generate questions and timer
 
-startButtonEl.addEventListener("click", beginQuiz)
-startButtonEl.addEventListener("click", countdown)
 
 //TIMER - is janky and needs to be fixed since adding event listener
 function countdown() {
@@ -61,8 +58,10 @@ function countdown() {
     }, 1000);
 }
 
+
 //FUNCTION TO BEGIN THE QUIZ
 function beginQuiz() {
+    startButtonEl.setAttribute("class", "hide")
     var userInitials = prompt("Welcome to Code Triva!  Please enter your initials to begin!")
     console.log(userInitials);
     generateQuestions();
@@ -71,18 +70,50 @@ function beginQuiz() {
 
 // beginQuiz();
 
+ 
+//THIS ADDS DYNAMIC BUTTONS
+
 function generateQuestions() {
-    questionsEl.textContent = questions[1].question
-    for (var i = 0; i < questions.length; i++) {
-        //its not reading the array
-        var answerOptions = [questions.answer]
-        var btn = document.createElement("button");
-        //WHY IS questions.answers RETURNING AS empty
-        var a = document.createTextNode(answerOptions);
-        btn.appendChild(a);
-        document.body.appendChild(btn);
+    questionsEl.textContent = questions[index].question
+    for (var i = 0; i < questions[index].answer.length;i++) {
+        var choiceButton = document.createElement("button");
+        var value = questions[index].answer[i];
+        console.log(value)
+        choiceButton.setAttribute("value", value)
+        choiceButton.textContent = value
+        choiceButton.onclick = answerQuestion
+        answersEl.appendChild(choiceButton)
+
+
+    //     var answerOptions = [questions[i].answer[i]]
+    // //     console.log(answerOptions)
+    //     var btn = document.createElement("button");
+    //     var a = document.createTextNode(answerOptions);
+    //     btn.appendChild(a);
+    //     document.body.appendChild(btn);
+    //     console.log(questions[0].answer)
     }
+}
+ 
+function checkAnswers() {
+
+}
+
+//runs this no matter what button is clicked
+function answerQuestion() {
+    console.log("yay abby")
 }
 
 
+
+
+
+//LOCAL STORAGE
+// localStorage.setItem("score", JSON.stringify(sec));
+//     scoreBoard.innerText = "Your score:" + localStorage.getItem("score");
+
+// event listeners for start button to generate questions and timer
+
+startButtonEl.addEventListener("click", beginQuiz)
+startButtonEl.addEventListener("click", countdown)
 
