@@ -6,7 +6,7 @@
 
 :root {
     --primary: #107f98;
-    --secondary:#13b95e;
+    --secondary: #13b95e;
     --tertiary: #0975e2;
 }
 
@@ -52,10 +52,32 @@ li {
     width: 90%;
 }
 
-table, th, td {
+table,
+th,
+td {
     border: 1px solid black;
 }
 
+button {
+    background-color: purple;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+    width: 100px;
+    height: 70px;
+    margin: 30px;
+}
+
+.start-btn {
+    background-color: #13b95e;
+}
+
+.questionWords {
+    color: purple;
+    text-align: center;
+}
+
 .hide {
-display: none;
+    display: none;
 }
