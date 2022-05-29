@@ -38,8 +38,6 @@ var questions = [
 ]
 
 
-
-//TIMER - is janky and needs to be fixed since adding event listener
 function countdown() {
     timeLeft = 30;
     //HOW TO DEDUCT TIME BASED ON WRONG ANSWERS!!!
@@ -62,9 +60,6 @@ function beginQuiz() {
     console.log(userInitials);
     generateQuestions();
 };
-
-
-// beginQuiz();
 
  
 //THIS ADDS DYNAMIC BUTTONS
@@ -92,7 +87,7 @@ function checkAnswers() {
         }
         timerEl.textContent = timeLeft + ' seconds remaining ';
     }
-//GIVE FEEDBACK QUETISON WAS WRONG
+alert("Incorect answer, -5 seconds")
 index ++ 
 if (index === questions[index].answer.length) {
     endQuiz()
