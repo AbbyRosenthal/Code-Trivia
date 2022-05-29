@@ -107,18 +107,17 @@ function checkAnswers() {
 //BUILD END QUIZ FUNCTION
 function endQuiz() {
     alert("The quiz has ended! Click on 'High Score' to see how you rank!")
-
+    playerScore();
 }
 
-//funtion to save player score
-
+//runs but doesn't return score
 var playerScore = function () {
     localStorage.setItem("score", JSON.stringify(timeLeft));
-    scoreBoard.innerText = "Congrats! Your Score is" + localStorage.getItem("score");
+    alert = "Congrats! Your Score is" + localStorage.getItem("score");
     console.log(playerScore)
 }
 
-//arrys have built in sort function... questions.sort 
+//NOTE: for high score page, arrys have built in sort function... questions.sort 
 
 
 // event listeners for start button to generate questions and timer
