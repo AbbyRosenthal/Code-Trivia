@@ -48,6 +48,7 @@ function countdown() {
         if (timeLeft <= 0) {
             timerEl.textContent = timeLeft + ' second remaining';
             clearInterval(timeInterval)
+            timeInterval
             endQuiz();
         }
 
@@ -100,13 +101,12 @@ function checkAnswers() {
     else {
         generateQuestions();
     }
-  
+
 }
 
 //BUILD END QUIZ FUNCTION
 function endQuiz() {
-    console.log("quiz has ended")
-    clearInterval(countdown)
+    alert("The quiz has ended! Click on 'High Score' to see how you rank!")
 
 }
 
